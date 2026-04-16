@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetNetworked — Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#111111;--surface:#181818;--card:#1e1e1e;--card2:#242424;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.13);
+  --gold:#E1910E;--gold-lt:#F5BC61;--gold-dim:rgba(225,145,14,0.12);--gold-bdr:rgba(225,145,14,0.35);
+  --white:#fff;--g1:rgba(255,255,255,0.72);--g2:rgba(255,255,255,0.45);--g3:rgba(255,255,255,0.25);
+  --green:#4ade80;--green-dim:rgba(74,222,128,0.1);
+  --r:16px;--r-sm:10px;--max:1260px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Manrope',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(17,17,17,0.95);backdrop-filter:blur(16px);z-index:100}
+.logo{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;letter-spacing:-0.04em;color:var(--white);text-decoration:none}
+.logo-icon{width:28px;height:28px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#000;flex-shrink:0}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:var(--g2);font-size:13.5px;text-decoration:none;transition:color .2s;font-weight:500}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--gold);color:#000;font-size:13px;font-weight:700;padding:9px 20px;border-radius:8px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--gold-lt)}
+
+/* ── UTILS ── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:6px 14px;border:1px solid var(--gold-bdr);border-radius:99px;background:var(--gold-dim)}
+.sec-head{text-align:center;margin-bottom:40px}
+.sec-head .eyebrow{margin-bottom:16px}
+.sec-head h2{font-size:34px;font-weight:800;letter-spacing:-0.04em;margin-bottom:10px}
+.sec-head p{font-size:15px;color:var(--g2);max-width:520px;margin:0 auto}
+.divider{height:1px;background:var(--border);margin:0}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:88px 24px 48px;max-width:800px;margin:0 auto}
+.hero h1{font-size:54px;font-weight:800;letter-spacing:-0.045em;line-height:1.04;margin:20px 0 18px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:17px;color:var(--g1);max-width:520px;margin:0 auto 32px;line-height:1.75}
+.toggle-wrap{display:inline-flex;background:var(--card);border:1px solid var(--border);border-radius:11px;padding:4px;gap:4px}
+.tbtn{padding:8px 22px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--g2);transition:all .2s;font-family:'Manrope',sans-serif}
+.tbtn.on{background:var(--gold);color:#000}
+.save-pill{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;background:var(--green-dim);color:var(--green);padding:2px 7px;border-radius:4px;margin-left:6px}
+
+/* ── FOUNDING BANNER ── */
+.banner{max-width:var(--max);margin:0 auto;padding:0 24px 32px}
+.banner-inner{background:linear-gradient(135deg,rgba(225,145,14,0.14) 0%,rgba(225,145,14,0.04) 100%);border:1px solid var(--gold-bdr);border-radius:14px;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.banner-text strong{font-size:15px;font-weight:700}
+.banner-text p{font-size:13px;color:var(--g1);margin-top:2px}
+.banner-cta{background:var(--gold);color:#000;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.banner-cta:hover{background:var(--gold-lt)}
+
+/* ── PLANS ── */
+.plans-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 16px}
+.plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px 22px;position:relative;transition:border-color .25s,transform .2s}
+.plan:hover{border-color:var(--border2);transform:translateY(-2px)}
+.plan.pop{border-color:var(--gold);background:linear-gradient(155deg,#1f1b0e 0%,#1e1e1e 55%)}
+.plan.dsh{border-style:dashed;border-color:rgba(255,255,255,0.12)}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:4px 14px;border-radius:99px;white-space:nowrap}
+.plan-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px}
+.plan-lbl.gld{color:var(--gold)}
+.plan-price{font-size:42px;font-weight:800;letter-spacing:-0.045em;line-height:1;margin-bottom:2px}
+.plan-price .sup{font-size:21px;vertical-align:top;margin-top:8px;display:inline-block}
+.plan-price .per{font-size:14px;font-weight:500;color:var(--g2)}
+.plan-price.cst{font-size:27px;padding-top:7px}
+.plan-save{font-size:11px;color:var(--green);font-weight:600;min-height:16px;margin-bottom:2px}
+.plan-sub{font-size:12.5px;color:var(--g2);margin-bottom:18px;line-height:1.5;min-height:40px}
+.plan-btn{display:block;width:100%;padding:11px;border-radius:9px;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;transition:all .2s;border:none;margin-bottom:20px;font-family:'Manrope',sans-serif}
+.btn-ol{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--white)}
+.btn-ol:hover{border-color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.05)}
+.btn-gd{background:var(--gold);color:#000}
+.btn-gd:hover{background:var(--gold-lt)}
+.btn-mt{background:rgba(255,255,255,0.06);color:var(--white);border:1px solid var(--border)}
+.btn-mt:hover{background:rgba(255,255,255,0.1)}
+.fgl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:14px 0 7px}
+.fi{display:flex;align-items:flex-start;gap:8px;padding:3px 0;font-size:12px;color:rgba(255,255,255,0.58);line-height:1.45}
+.fi.hi{color:rgba(255,255,255,0.86)}
+.ic{flex-shrink:0;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;margin-top:1px}
+.ic-y{background:rgba(225,145,14,0.18);color:var(--gold)}
+.ic-n{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.2)}
+.plan-feenote{font-size:11px;color:rgba(255,255,255,0.38);background:rgba(255,255,255,0.04);border-radius:7px;padding:9px 11px;margin-top:12px;line-height:1.55}
+.plan-feenote strong{color:var(--gold)}
+.plans-footnote{text-align:center;font-size:12px;color:var(--g3);padding:12px 24px 64px;max-width:var(--max);margin:0 auto}
+
+/* ── HOW PRICING WORKS ── */
+.how-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.how-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.how-card h2{font-size:28px;font-weight:800;letter-spacing:-0.03em;margin-bottom:12px}
+.how-card p{font-size:14px;color:var(--g1);line-height:1.75;margin-bottom:18px}
+.fpill{display:inline-flex;align-items:center;background:var(--gold-dim);border:1px solid var(--gold-bdr);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--gold);margin:0 6px 8px 0}
+.fee-box{background:rgba(255,255,255,0.04);border-radius:var(--r-sm);padding:18px 22px}
+.fee-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px}
+.fee-row:last-child{border-bottom:none}
+.fee-lbl{color:var(--g2)}
+.fee-val{font-weight:700}
+.fee-val.gld{color:var(--gold)}
+
+/* ── SOCIAL PROOF STRIP ── */
+.proof-strip{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.proof-logos{text-align:center;padding:0 0 36px}
+.proof-logos p{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);margin-bottom:18px}
+.proof-logos-row{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;opacity:.5;filter:grayscale(1) brightness(2)}
+.proof-logos-row img{height:30px;object-fit:contain}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.testi{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s}
+.testi:hover{border-color:var(--border2)}
+.testi-quote{font-size:13px;color:var(--g1);line-height:1.72;flex:1}
+.testi-quote::before{content:'"';color:var(--gold);font-size:18px;font-weight:800;line-height:1;display:block;margin-bottom:6px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-author img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.testi-name{font-size:13px;font-weight:700}
+.testi-role{font-size:11px;color:var(--g2)}
+
+/* ── CONSULTING ── */
+.consulting-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.consulting-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.consulting-top{padding:36px 40px 28px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start;border-bottom:1px solid var(--border)}
+.consulting-top h2{font-size:34px;font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin:14px 0 12px}
+.consulting-top h2 em{color:var(--gold);font-style:normal}
+.consulting-top p{font-size:14px;color:var(--g2);line-height:1.72;max-width:520px}
+.consulting-cta-area{display:flex;flex-direction:column;align-items:flex-end;gap:10px;flex-shrink:0;padding-top:14px}
+.consulting-cta-area a{background:var(--gold);color:#000;font-size:14px;font-weight:700;padding:13px 26px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.consulting-cta-area a:hover{background:var(--gold-lt)}
+.consulting-cta-area span{font-size:11px;color:var(--g3);text-align:right}
+.proof-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.proof-num{background:var(--surface);padding:22px 26px}
+.proof-num-lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.proof-num-val{font-size:20px;font-weight:800;letter-spacing:-0.03em;margin-bottom:3px}
+.proof-num-sub{font-size:12px;color:var(--g2)}
+.consulting-body{padding:28px 40px 36px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.consulting-col-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g3);margin-bottom:14px}
+.cl{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--g1);padding:5px 0}
+.cl span:first-child{color:var(--gold);flex-shrink:0;margin-top:1px}
+.cl-arr span:first-child{color:var(--g3)}
+.scope-box{margin-top:18px;padding:16px 18px;background:rgba(225,145,14,0.07);border:1px solid rgba(225,145,14,0.18);border-radius:var(--r-sm)}
+.scope-box strong{font-size:13px;font-weight:700;display:block;margin-bottom:4px}
+.scope-box p{font-size:12px;color:var(--g2);line-height:1.6}
+
+/* ── FEATURE TABLE ── */
+.feat-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px;overflow-x:auto}
+.cmp{width:100%;border-collapse:collapse;min-width:600px}
+.cmp th{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);padding:13px 14px;text-align:left;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.02)}
+.cmp th.hi{color:var(--gold)}
+.cmp td{padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.6);border-bottom:1px solid rgba(255,255,255,0.04)}
+.cmp td.feat{color:var(--white);font-weight:500}
+.cmp td.y{color:var(--gold);font-weight:700;text-align:center}
+.cmp td.n{color:rgba(255,255,255,0.18);text-align:center}
+.cmp td.pt{color:var(--gold-lt);text-align:center;font-size:11px;font-weight:600}
+.cmp tr:hover td{background:rgba(255,255,255,0.015)}
+.cmp .grp td{background:rgba(255,255,255,0.03);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px}
+.tbl-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+
+/* ── SMS ── */
+.sms-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.sms-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.sms-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.sms-card h3{font-size:14px;font-weight:700;margin-bottom:5px}
+.sms-sub{font-size:12px;color:var(--g2);margin-bottom:18px}
+table.st{width:100%;border-collapse:collapse}
+table.st th{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g2);padding:0 0 8px;text-align:left;border-bottom:1px solid var(--border)}
+table.st td{padding:9px 0;font-size:12.5px;color:rgba(255,255,255,0.65);border-bottom:1px solid rgba(255,255,255,0.04)}
+table.st td.v{color:var(--white);font-weight:600}
+table.st td.g{color:var(--gold);font-weight:700}
+table.st tr:last-child td{border-bottom:none}
+.bulk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.bulk{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 14px;text-align:center;transition:border-color .2s;cursor:pointer}
+.bulk:hover{border-color:var(--gold-bdr)}
+.bulk.best{border-color:var(--gold);background:var(--gold-dim)}
+.bulk-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);margin-bottom:5px}
+.bulk-qty{font-size:17px;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px}
+.bulk-price{font-size:22px;font-weight:800;color:var(--gold);letter-spacing:-0.03em}
+.bulk-cpm{font-size:11px;color:var(--g2);margin-top:4px}
+
+/* ── NETWORKED CONNECTIONS ── */
+.net-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.net-toggle{display:flex;gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:32px;width:fit-content}
+.ntbtn{padding:9px 22px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:var(--card);color:var(--g2);transition:all .2s;font-family:'Manrope',sans-serif}
+.ntbtn.on{background:var(--gold);color:#000}
+.net-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.nplan{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px 22px;position:relative;transition:border-color .25s,transform .2s}
+.nplan:hover{border-color:var(--border2);transform:translateY(-2px)}
+.nplan.npop{border-color:var(--gold);background:linear-gradient(155deg,#1f1b0e 0%,#1e1e1e 55%)}
+.npop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:4px 14px;border-radius:99px;white-space:nowrap}
+.nplan-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-bottom:8px}
+.nplan-lbl.gld{color:var(--gold)}
+.nplan-price{font-size:40px;font-weight:800;letter-spacing:-0.045em;line-height:1;margin-bottom:2px}
+.nplan-price .nsup{font-size:20px;vertical-align:top;margin-top:8px;display:inline-block}
+.nplan-price .nper{font-size:14px;font-weight:500;color:var(--g2)}
+.nsave{font-size:11px;color:var(--green);font-weight:600;min-height:16px;margin-bottom:2px}
+.nplan-sub{font-size:12.5px;color:var(--g2);margin-bottom:18px;line-height:1.5;min-height:38px}
+.nplan-btn{display:block;width:100%;padding:11px;border-radius:9px;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;transition:all .2s;border:none;margin-bottom:20px;font-family:'Manrope',sans-serif}
+.nfi{display:flex;align-items:flex-start;gap:8px;padding:3px 0;font-size:12px;color:rgba(255,255,255,0.58);line-height:1.45}
+.nfi.hi{color:rgba(255,255,255,0.86)}
+.nic{flex-shrink:0;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;margin-top:1px}
+.nic-y{background:rgba(225,145,14,0.18);color:var(--gold)}
+.nic-n{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.2)}
+.nfgl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:14px 0 7px}
+.credits-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.credit-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 14px;text-align:center;transition:border-color .2s;cursor:pointer}
+.credit-card:hover{border-color:var(--gold-bdr)}
+.credit-card.best{border-color:var(--gold);background:var(--gold-dim)}
+.cc-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);margin-bottom:5px}
+.cc-qty{font-size:16px;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px}
+.cc-price{font-size:22px;font-weight:800;color:var(--gold);letter-spacing:-0.03em}
+.cc-cpm{font-size:11px;color:var(--g2);margin-top:4px}
+@media(max-width:860px){.net-grid,.credits-row{grid-template-columns:1fr}}
+
+/* ── FEE TABLES ── */
+.fees-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.fee-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.ftab{padding:7px 17px;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--g2);transition:all .2s;font-family:'Manrope',sans-serif}
+.ftab.on{background:var(--gold);color:#000;border-color:var(--gold)}
+.ftw{display:none}
+.ftw.on{display:block}
+.ft{width:100%;border-collapse:collapse}
+.ft th{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);padding:12px 16px;text-align:left;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border)}
+.ft td{padding:13px 16px;font-size:13.5px;color:rgba(255,255,255,0.65);border-bottom:1px solid rgba(255,255,255,0.04)}
+.ft td.b{color:var(--white);font-weight:700}
+.ft td.g{color:var(--gold);font-weight:700}
+.ft tr:last-child td{border-bottom:none}
+.ft tr:hover td{background:rgba(255,255,255,0.015)}
+
+/* ── CALCULATOR ── */
+.calc-wrap{max-width:820px;margin:0 auto;padding:0 24px 72px}
+.calc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.cfield label{display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g2);margin-bottom:7px}
+.cfield input,.cfield select{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:11px 13px;font-size:15px;font-weight:600;color:var(--white);font-family:'Manrope',sans-serif;outline:none;transition:border-color .2s}
+.cfield input:focus,.cfield select:focus{border-color:var(--gold)}
+.cfield select option{background:#1e1e1e}
+.calc-results{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cres{background:rgba(255,255,255,0.04);border-radius:var(--r-sm);padding:16px}
+.cres-lbl{font-size:10px;color:var(--g2);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px}
+.cres-val{font-size:24px;font-weight:800;letter-spacing:-0.03em}
+.cres-val.gld{color:var(--gold)}
+.cres-sub{font-size:11px;color:var(--g2);margin-top:3px}
+.calc-note{font-size:12px;color:var(--g2);background:rgba(255,255,255,0.04);border-radius:8px;padding:12px 14px;margin-top:14px;line-height:1.6}
+
+/* ── MORE TESTIMONIALS ── */
+.testi2-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+
+/* ── APP ── */
+.app-wrap{max-width:var(--max);margin:0 auto;padding:0 24px 72px}
+.app-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.app-card h2{font-size:24px;font-weight:800;letter-spacing:-0.03em;margin-bottom:8px}
+.app-card p{font-size:14px;color:var(--g2);max-width:420px;line-height:1.65}
+.app-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.app-btns a{display:block}
+.app-btns img{height:44px;display:block;object-fit:contain}
+
+/* ── FAQ ── */
+.faq-wrap{max-width:680px;margin:0 auto;padding:0 24px 80px}
+.faq-wrap .sec-head{margin-bottom:32px}
+.faq-item{border-bottom:1px solid var(--border);padding:17px 0;cursor:pointer;user-select:none}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600;letter-spacing:-0.01em;gap:16px}
+.faq-arrow{color:var(--gold);font-size:20px;line-height:1;transition:transform .2s;flex-shrink:0}
+.faq-a{font-size:13.5px;color:var(--g1);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-top:10px}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+
+/* ── BOTTOM CTA ── */
+.btm-cta{text-align:center;padding:80px 24px 100px;border-top:1px solid var(--border);background:radial-gradient(ellipse 60% 40% at 50% 100%, rgba(225,145,14,0.06) 0%, transparent 70%)}
+.btm-cta h2{font-size:40px;font-weight:800;letter-spacing:-0.04em;margin-bottom:14px}
+.btm-cta p{font-size:16px;color:var(--g1);margin-bottom:28px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--gold);color:#000;font-size:15px;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;transition:background .2s}
+.btn-p:hover{background:var(--gold-lt)}
+.btn-s{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--white);font-size:15px;font-weight:600;padding:14px 32px;border-radius:10px;text-decoration:none;transition:border-color .2s}
+.btn-s:hover{border-color:rgba(255,255,255,0.5)}
+.cta-micro{font-size:12px;color:var(--g3);margin-top:14px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1060px){.plans-grid{grid-template-columns:repeat(2,1fr)}.proof-nums{grid-template-columns:1fr}}
+@media(max-width:860px){.testi-grid{grid-template-columns:1fr}.consulting-top,.consulting-body{grid-template-columns:1fr}.consulting-cta-area{align-items:flex-start}.how-grid,.sms-grid{grid-template-columns:1fr}}
+@media(max-width:680px){
+  nav{padding:14px 18px}.nav-links{display:none}
+  .hero h1{font-size:34px}
+  .plans-grid,.calc-grid{grid-template-columns:1fr}
+  .bulk-grid{grid-template-columns:repeat(2,1fr)}
+  .calc-results{grid-template-columns:repeat(2,1fr)}
+  .banner-inner{flex-direction:column;text-align:center}
+  .app-card{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ INTERNAL REVIEW BANNER ══ -->
+<div style="background:#1a1a1a;border-bottom:2px solid #E1910E;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:9999;">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span style="background:#E1910E;color:#000;font-size:10px;font-weight:800;letter-spacing:.1em;padding:3px 8px;border-radius:4px;text-transform:uppercase;">Internal Review</span>
+    <span style="font-size:13px;color:#BBBBBB;">This is a draft pricing page for internal review only — not live to the public.</span>
+  </div>
+  <span style="font-size:12px;color:#707070;">GetNetworked Marketing Team · April 2026</span>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="logo" href="https://getnetworked.com">
+    <span class="logo-icon">N</span>GetNetworked
+  </a>
+  <div class="nav-links">
+    <a href="https://getnetworked.com/product">Product</a>
+    <a href="https://getnetworked.com/monetization">Monetization</a>
+    <a href="https://app.getnetworked.com">Events</a>
+    <a href="#" class="active">Pricing</a>
+    <a href="https://getnetworked.com/faq">FAQ</a>
+  </div>
+  <a class="nav-cta" href="https://app.getnetworked.com">Get Started</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="eyebrow">Simple, Transparent Pricing</div>
+  <h1>Build your community.<br><em>Keep more of what you earn.</em></h1>
+  <p>Hosting is always free. Attendees pay a small fee per ticket. The more you scale, the better the rates.</p>
+  <div class="toggle-wrap">
+    <button class="tbtn on" id="btn-mo" onclick="setTerm('mo')">Monthly</button>
+    <button class="tbtn" id="btn-yr" onclick="setTerm('yr')">Annual <span class="save-pill">Save 20%</span></button>
+  </div>
+</section>
+
+<!-- ══ FOUNDING BANNER ══ -->
+<div class="banner">
+  <div class="banner-inner">
+    <div class="banner-text">
+      <strong>Founding Host Offer — Lock in Growth at $29/mo forever</strong>
+      <p>Offer expires in <span id="founding-countdown" style="color:#FCD97D;font-weight:700;">—</span> · Regular price $49/mo · Limited availability.</p>
+    </div>
+    <a href="https://dashboard.getnetworked.com/plans" class="banner-cta">Claim Your Rate →</a>
+  </div>
+</div>
+
+<!-- ══ PLAN CARDS ══ -->
+<section class="plans-wrap" id="pricing">
+  <div class="plans-grid">
+
+    <div class="plan">
+      <div class="plan-lbl">Community</div>
+      <div class="plan-price"><span class="sup">$</span>0<span class="per">/mo</span></div>
+      <div class="plan-save">&nbsp;</div>
+      <div class="plan-sub">Get discovered. Host free events, reach local professionals through the GetNetworked marketplace, and build your community before you monetize.</div>
+      <a href="https://app.getnetworked.com" class="plan-btn btn-ol">Get Started Free</a>
+      <div class="fgl">Events</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Up to 3 events / month</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Up to 75 attendees per event</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Free events only</div>
+      <div class="fi"><span class="ic ic-y">✓</span>RSVP management + QR check-in</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Event questionnaires</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Listed in GetNetworked public marketplace</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Location-based discovery + local reach</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Event roles — Cohost, Speaker, Staff</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Sponsor role (paid events only)</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Paid ticketing</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Recurring events</div>
+      <div class="fgl">Messaging</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Transactional messages free &amp; unlimited</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Event broadcast chat — 1 per event</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Campaign SMS (upgrade to Growth)</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Campaign emails (upgrade to Growth)</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Campaign scheduler</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Post-event messaging</div>
+      <div class="fgl">Platform</div>
+      <div class="fi"><span class="ic ic-y">✓</span>GetNetworked branded pages</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Digital business cards</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Custom branding</div>
+      <div class="fi"><span class="ic ic-n">✗</span>Analytics + data export</div>
+      <div class="plan-feenote">Paid ticketing not available on Community — <strong>upgrade to Growth</strong> to sell tickets and collect revenue</div>
+    </div>
+
+    <div class="plan pop">
+      <div class="pop-badge">Most Popular</div>
+      <div class="plan-lbl gld">Growth</div>
+      <div class="plan-price"><span class="sup">$</span><span class="pv" data-mo="49" data-yr="39">49</span><span class="per">/mo</span></div>
+      <div class="plan-save" id="gn-save">&nbsp;</div>
+      <div class="plan-sub">For hosts ready to monetize events, grow their audience, and build recurring revenue.</div>
+      <a href="https://dashboard.getnetworked.com/plans" class="plan-btn btn-gd">Start Growing</a>
+      <div class="fgl">Events</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Unlimited events</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Unlimited attendees per event</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Listed in GetNetworked public marketplace</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Paid ticketing unlocked</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Early bird + tiered ticket pricing</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Recurring / repeating events</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Subscription plans for members + sponsors</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Promo codes + discount tools</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Event roles — Cohost, Sponsor, Speaker, Staff</div>
+      <div class="fgl">Messaging</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Transactional messages free &amp; unlimited</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Event broadcast chat — unlimited</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>5,000 campaign SMS / month</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>25,000 campaign emails / month</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Campaign scheduler + automation</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Post-event messaging</div>
+      <div class="fgl">Platform</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Custom branding on all pages</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Revenue + ticket analytics</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Attendee insights + data export</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Email + chat support</div>
+      <div class="plan-feenote">Attendee fee: <strong>8% + $0.99</strong> per ticket — host always keeps 100% of face value</div>
+    </div>
+
+    <div class="plan">
+      <div class="plan-lbl">Enterprise</div>
+      <div class="plan-price"><span class="sup">$</span><span class="pv" data-mo="199" data-yr="159">199</span><span class="per">/mo</span></div>
+      <div class="plan-save" id="en-save">&nbsp;</div>
+      <div class="plan-sub">For high-volume organizers, multi-city operators, and agencies scaling a community business.</div>
+      <a href="https://dashboard.getnetworked.com/plans" class="plan-btn btn-ol">Start Scaling</a>
+      <div class="fgl">Events</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Unlimited events + attendees</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Multi-city / event series management</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Priority T+1 payouts</div>
+      <div class="fi"><span class="ic ic-y">✓</span>All Growth event features</div>
+      <div class="fgl">Messaging</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Transactional messages free &amp; unlimited</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Event broadcast chat — unlimited</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>10,000 campaign SMS / month</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>50,000 campaign emails / month</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Dedicated campaign manager</div>
+      <div class="fgl">Platform</div>
+      <div class="fi hi"><span class="ic ic-n">✗</span>White-label (coming soon)</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>API + Zapier integrations</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Full ROI + revenue reporting</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Dedicated account manager</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Priority SLA support</div>
+      <div class="plan-feenote">Attendee fee: <strong>6% + $0.99</strong> per ticket — lowest self-serve rate</div>
+    </div>
+
+    <div class="plan dsh">
+      <div class="plan-lbl">Revenue Partner</div>
+      <div class="plan-price cst">Custom</div>
+      <div class="plan-save">&nbsp;</div>
+      <div class="plan-sub">For organizations, law firms, and brands running events as a revenue infrastructure strategy.</div>
+      <a href="https://calendly.com/networked" class="plan-btn btn-mt">Book a Demo</a>
+      <div class="fgl">Managed services</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Branded event series (up to 6/mo)</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Dedicated GN event manager</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Co-branded marketing package</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Full sponsor management</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Quarterly business review + ROI report</div>
+      <div class="fgl">Messaging + platform</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Transactional messages free &amp; unlimited</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Event broadcast chat — unlimited</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Unlimited campaign SMS + emails</div>
+      <div class="fi hi"><span class="ic ic-y">✓</span>Custom ROI reporting</div>
+      <div class="fi"><span class="ic ic-y">✓</span>Dedicated infrastructure + SLA</div>
+      <div class="plan-feenote">Attendee fee: <strong>0%</strong> — no platform fee on any tickets</div>
+    </div>
+
+  </div>
+</section>
+<p class="plans-footnote">Stripe payment processing (2.9% + $0.30 per transaction) applies to all paid tickets and is passed through at cost. You always receive the full face value of your ticket price.</p>
+
+<!-- ══ HOW PRICING WORKS ══ -->
+<section class="how-wrap">
+  <div class="how-card">
+    <div class="how-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;">How pricing works</div>
+        <h2>Hosting is always free.<br>Attendees pay a small fee.</h2>
+        <p>GetNetworked is free to host on. When you sell a paid ticket, attendees pay a platform fee on top of your ticket price — you keep 100% of the face value. Upgrade your plan to unlock lower attendee fees at scale.</p>
+        <div>
+          <span class="fpill">Free to host</span>
+          <span class="fpill">You keep 100% of ticket price</span>
+          <span class="fpill">No monthly fee on Community</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g2);margin-bottom:10px;">Example — $10 ticket (Community plan)</div>
+        <div class="fee-box">
+          <div class="fee-row"><span class="fee-lbl">Your ticket price</span><span class="fee-val">$10.00</span></div>
+          <div class="fee-row"><span class="fee-lbl">Platform fee (10% + $1.00)</span><span class="fee-val">$2.00</span></div>
+          <div class="fee-row"><span class="fee-lbl">Attendee pays total</span><span class="fee-val">$12.00</span></div>
+          <div class="fee-row"><span class="fee-lbl">You receive</span><span class="fee-val gld">$10.00</span></div>
+        </div>
+        <p style="font-size:12px;color:var(--g2);margin-top:10px;line-height:1.65;">Upgrade to Growth or Enterprise to reduce attendee fees and make your events easier to fill at higher ticket prices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOCIAL PROOF ══ -->
+<section class="proof-strip">
+  <div class="proof-logos">
+    <p>Trusted by communities &amp; leaders</p>
+    <div class="proof-logos-row">
+      <img src="https://framerusercontent.com/images/gkxijd8X6KDOcBV1g5IrEzjtYKM.png" alt="partner">
+      <img src="https://framerusercontent.com/images/FjNGXMTKzd6qlMxX7MjlCdncHg.png" alt="partner">
+      <img src="https://framerusercontent.com/images/H0buRhdyAU8hphdkwNEjBkRA1w.png" alt="partner">
+      <img src="https://framerusercontent.com/images/jYNXU9pLFXeWchAT5BWNHOyfxes.png" alt="partner">
+      <img src="https://framerusercontent.com/images/Mg9H7dKKoPtZRuBcibWcLtW6II.png" alt="partner">
+      <img src="https://framerusercontent.com/images/JHRo0NAVIlLqsZX5ve0bZpt0kH0.png" alt="partner">
+    </div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi">
+      <p class="testi-quote">After partnering with the platform, we went from hosting no events to consistently bringing 80–100 people into the room within four months. What looks like an event platform on the surface is actually a powerful community-building tool.</p>
+      <div class="testi-author">
+        <img src="https://framerusercontent.com/images/P7SAqypJoqRYDvfsStxrINVGk.png" alt="Bryan Archilla">
+        <div><div class="testi-name">Bryan Archilla</div><div class="testi-role">Lead Membership Concierge, Life Time Work</div></div>
+      </div>
+    </div>
+    <div class="testi">
+      <p class="testi-quote">Sponsoring events has allowed us to grow our network and connect with potential customers in a much more meaningful way than traditional marketing spend. The in-person conversations create real opportunities you simply don't get through digital channels.</p>
+      <div class="testi-author">
+        <img src="https://framerusercontent.com/images/7O8Tk3BfaYNJVXS034OLp6Dhns.png" alt="Jace Agolli">
+        <div><div class="testi-name">Jace Agolli</div><div class="testi-role">Progressive Medical Center</div></div>
+      </div>
+    </div>
+    <div class="testi">
+      <p class="testi-quote">GetNetworked elevated our event ticketing process. The seamless onboarding, user friendly platform, and post-event attendee connections changes the game for ticketing.</p>
+      <div class="testi-author">
+        <img src="https://framerusercontent.com/images/OCuQvpl9mgTLNywY5L34OPX3OA.png" alt="Mason Koski">
+        <div><div class="testi-name">Mason Koski</div><div class="testi-role">Founder, Vamo Rising Professionals</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MANAGED EVENT SERVICES ══ -->
+<section class="consulting-wrap">
+  <div class="consulting-card">
+    <div class="consulting-top">
+      <div>
+        <div class="eyebrow">Managed Event Services</div>
+        <h2>We don't fill rooms.<br><em>We build pipeline.</em></h2>
+        <p>GetNetworked designs, manages, and executes curated in-person events that generate measurable business outcomes — partnerships, sponsorships, customers, and referrals. Not just attendance. Available as a standalone service on any plan.</p>
+      </div>
+      <div class="consulting-cta-area">
+        <a href="https://calendly.com/networked">Book a Strategy Call →</a>
+        <span>No commitment · 30-min call</span>
+      </div>
+    </div>
+    <div class="proof-nums">
+      <div class="proof-num">
+        <div class="proof-num-lbl">Life Time Work</div>
+        <div class="proof-num-val">250+ attendees</div>
+        <div class="proof-num-sub">108K impressions · 60+ qualified leads</div>
+      </div>
+      <div class="proof-num">
+        <div class="proof-num-lbl">Takedown Fitness</div>
+        <div class="proof-num-val">$65K+ revenue</div>
+        <div class="proof-num-sub">295 registrations · 7 deals closed</div>
+      </div>
+      <div class="proof-num">
+        <div class="proof-num-lbl">The Weinstein Firm</div>
+        <div class="proof-num-val">$100K+ sponsorships</div>
+        <div class="proof-num-sub">1,400+ registrations · 25 sponsors</div>
+      </div>
+    </div>
+    <div class="consulting-body">
+      <div>
+        <div class="consulting-col-lbl">What we handle</div>
+        <div class="cl"><span>✓</span>Full event design, production, and on-site execution</div>
+        <div class="cl"><span>✓</span>Co-branded marketing — email, SMS, and social campaigns</div>
+        <div class="cl"><span>✓</span>Speaker sourcing, sponsor management, and placement</div>
+        <div class="cl"><span>✓</span>Registration technology, QR check-in, and attendee capture</div>
+        <div class="cl"><span>✓</span>Post-event data export, ROI reporting, and follow-up campaigns</div>
+        <div class="cl"><span>✓</span>One-off activations or recurring monthly series</div>
+      </div>
+      <div>
+        <div class="consulting-col-lbl">Best for</div>
+        <div class="cl cl-arr"><span>→</span>Law firms and professional services building client relationships</div>
+        <div class="cl cl-arr"><span>→</span>Brands and businesses using events to drive revenue and referrals</div>
+        <div class="cl cl-arr"><span>→</span>Coworking spaces and venues activating their community</div>
+        <div class="cl cl-arr"><span>→</span>Companies running festival activations and pop-up experiences</div>
+        <div class="cl cl-arr"><span>→</span>Organizations wanting zero-lift, fully managed event infrastructure</div>
+        <div class="scope-box">
+          <strong>Every engagement is custom-scoped.</strong>
+          <p>Pricing is based on event scope, frequency, and services required. Book a 30-minute strategy call and we'll build a proposal tailored to your goals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURE COMPARISON ══ -->
+<section class="feat-wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Feature comparison</div>
+    <h2>Everything, side by side.</h2>
+    <p>See exactly what each plan unlocks — mapped to what's live in the product today.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead><tr><th style="width:34%;">Feature</th><th>Community</th><th class="hi">Growth</th><th>Enterprise</th><th>Revenue Partner</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="5">Events &amp; ticketing</td></tr>
+        <tr><td class="feat">Events per month</td><td>3</td><td class="y">Unlimited</td><td class="y">Unlimited</td><td class="y">Unlimited</td></tr>
+        <tr><td class="feat">Attendees per event</td><td>75</td><td class="y">Unlimited</td><td class="y">Unlimited</td><td class="y">Unlimited</td></tr>
+        <tr><td class="feat">Paid ticketing</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Early bird + tiered pricing</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Recurring / repeating events</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Subscription plans for members + sponsors</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Promo codes + discounts</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Event roles (Cohost, Speaker, Staff)</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Sponsor role</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Team seats (account-level access)</td><td class="n">—</td><td class="n">—</td><td class="pt">Coming soon</td><td class="pt">Coming soon</td></tr>
+        <tr><td class="feat">VIP + sponsor packages</td><td class="n">—</td><td class="pt">Coming soon</td><td class="pt">Coming soon</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Event questionnaires</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Listed in public marketplace</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Location-based discovery + local reach</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">QR code check-in</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Multi-city / series management</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Priority T+1 payouts</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr class="grp"><td colspan="5">Messaging</td></tr>
+        <tr><td class="feat">Transactional messages (confirmations, reminders)</td><td class="y">✓ Free</td><td class="y">✓ Free</td><td class="y">✓ Free</td><td class="y">✓ Free</td></tr>
+        <tr><td class="feat">Campaign SMS / month</td><td class="n">—</td><td class="y">5,000</td><td class="y">10,000</td><td class="y">Unlimited</td></tr>
+        <tr><td class="feat">Campaign emails / month</td><td class="n">—</td><td class="y">25,000</td><td class="y">50,000</td><td class="y">Unlimited</td></tr>
+        <tr><td class="feat">Campaign scheduler + automation</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Post-event messaging</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Real-time event updates</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Event broadcast chat</td><td class="pt">1 per event</td><td class="y">Unlimited</td><td class="y">Unlimited</td><td class="y">Unlimited</td></tr>
+        <tr><td class="feat">Bulk SMS add-ons</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">Included</td></tr>
+        <tr><td class="feat">Bulk email add-ons</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">Included</td></tr>
+        <tr><td class="feat">Host controls for transactional messages</td><td class="pt">Coming soon</td><td class="pt">Coming soon</td><td class="pt">Coming soon</td><td class="pt">Coming soon</td></tr>
+        <tr class="grp"><td colspan="5">Analytics &amp; platform</td></tr>
+        <tr><td class="feat">Custom branding</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Revenue + ticket analytics</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Attendee insights + data export</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">White-label (remove GN branding)</td><td class="n">—</td><td class="n">—</td><td class="pt">Coming soon</td><td class="pt">Coming soon</td></tr>
+        <tr><td class="feat">API + Zapier integrations</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Dedicated campaign manager</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Dedicated account manager</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td class="feat">Digital business cards</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr class="grp"><td colspan="5">Attendee fees — Growth+ only (added on top of ticket price · host keeps 100%)</td></tr>
+        <tr><td class="feat">$0 – $50 ticket</td><td class="n">Free events only</td><td class="y">8% + $0.99</td><td class="y">6% + $0.99</td><td class="y">0%</td></tr>
+        <tr><td class="feat">$50 – $150 ticket</td><td class="n">—</td><td class="y">7% + $0.99</td><td class="y">5% + $0.99</td><td class="y">0%</td></tr>
+        <tr><td class="feat">$150 – $300 ticket</td><td class="n">—</td><td class="y">6% + $0.99</td><td class="y">4% + $0.99</td><td class="y">0%</td></tr>
+        <tr><td class="feat">$300+ ticket</td><td class="n">—</td><td class="y">4% + $0.99</td><td class="y">2% + $0.99</td><td class="y">0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══ SMS & MESSAGING ══ -->
+<section class="sms-wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Campaign messaging</div>
+    <h2>Transactional messages are always free.</h2>
+    <p>RSVP confirmations, event reminders, and ticket receipts are sent automatically at no cost on every plan. Credits below apply to host-initiated campaigns only — announcements, blasts, and follow-ups.</p>
+  </div>
+  <div class="sms-grid">
+    <div class="sms-card">
+      <h3>Overage rates by plan</h3>
+      <div class="sms-sub">Applies to campaign messages when you exceed your monthly allocation. Transactional messages are never metered.</div>
+      <table class="st">
+        <thead><tr><th>Plan</th><th>SMS overage</th><th>Email overage</th></tr></thead>
+        <tbody>
+          <tr><td>Growth</td><td class="g">$0.018 / SMS</td><td class="v">$0.0008 / email</td></tr>
+          <tr><td>Enterprise</td><td class="g">$0.012 / SMS</td><td class="v">$0.0006 / email</td></tr>
+          <tr><td>Revenue Partner</td><td class="g">Included</td><td class="v">Included</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sms-card">
+      <h3>Bulk SMS add-ons</h3>
+      <div class="sms-sub">One-time purchase, available on all plans. Credits roll over 90 days.</div>
+      <div class="bulk-grid">
+        <div class="bulk"><div class="bulk-qty">1,000 SMS</div><div class="bulk-price">$19</div><div class="bulk-cpm">$0.019/msg</div></div>
+        <div class="bulk"><div class="bulk-qty">5,000 SMS</div><div class="bulk-price">$79</div><div class="bulk-cpm">$0.016/msg</div></div>
+        <div class="bulk best"><div class="bulk-tag">Best value</div><div class="bulk-qty">15,000 SMS</div><div class="bulk-price">$199</div><div class="bulk-cpm">$0.013/msg</div></div>
+        <div class="bulk"><div class="bulk-qty">50,000 SMS</div><div class="bulk-price">$549</div><div class="bulk-cpm">$0.011/msg</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BULK EMAIL ADD-ONS -->
+  <div class="sms-card" style="margin-top:16px;">
+    <h3>Bulk email add-ons</h3>
+    <div class="sms-sub">One-time purchase, available on all plans. Credits roll over 90 days — use them whenever you need them.</div>
+    <div class="bulk-grid">
+      <div class="bulk">
+        <div class="bulk-qty">10,000 emails</div>
+        <div class="bulk-price">$9</div>
+        <div class="bulk-cpm">$0.0009/email</div>
+      </div>
+      <div class="bulk">
+        <div class="bulk-qty">50,000 emails</div>
+        <div class="bulk-price">$39</div>
+        <div class="bulk-cpm">$0.00078/email</div>
+      </div>
+      <div class="bulk best">
+        <div class="bulk-tag">Best value</div>
+        <div class="bulk-qty">150,000 emails</div>
+        <div class="bulk-price">$99</div>
+        <div class="bulk-cpm">$0.00066/email</div>
+      </div>
+      <div class="bulk">
+        <div class="bulk-qty">500,000 emails</div>
+        <div class="bulk-price">$299</div>
+        <div class="bulk-cpm">$0.00060/email</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--g3);margin-top:14px;">Email credits never expire and stack on top of your monthly included allocation. Overage is billed automatically if you prefer not to pre-purchase.</p>
+  </div>
+</section>
+
+
+<!-- ══ NETWORKED CONNECTIONS ══ -->
+<section class="net-wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Networked Connections</div>
+    <h2>Your network is your net worth.</h2>
+    <p>Premium membership for attendees who want to connect at scale — not just attend. Unlimited intros, AI-matched connections, and priority access to every room that matters.</p>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;">
+    <div class="net-toggle">
+      <button class="ntbtn on" id="nt-mo" onclick="setNet('mo')">Monthly</button>
+      <button class="ntbtn" id="nt-yr" onclick="setNet('yr')">Annual <span class="save-pill">Save 20%</span></button>
+    </div>
+    <p style="font-size:13px;color:var(--g2);">Available to any attendee on any host's event — no host plan required.</p>
+  </div>
+
+  <div class="net-grid">
+
+    <!-- FREE -->
+    <div class="nplan">
+      <div class="nplan-lbl">Explorer</div>
+      <div class="nplan-price"><span class="nsup">$</span>0<span class="nper">/mo</span></div>
+      <div class="nsave">&nbsp;</div>
+      <div class="nplan-sub">Browse events, attend for free, and make up to 5 connection requests per month.</div>
+      <a href="https://app.getnetworked.com" class="nplan-btn btn-ol">Join Free</a>
+      <div class="nfgl">Networking</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Browse events near you</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Basic community profile</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>5 connection requests / month</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Digital business card</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>See who viewed your profile</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>Pre-event attendee list</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>Unlimited direct messaging</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>AI-matched introductions</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>Priority RSVP access</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>VIP event access</div>
+    </div>
+
+    <!-- NETWORKED MEMBER (FEATURED) -->
+    <div class="nplan npop">
+      <div class="npop-badge">Most Popular</div>
+      <div class="nplan-lbl gld">Networked Member</div>
+      <div class="nplan-price"><span class="nsup">$</span><span class="npv" data-mo="9.99" data-yr="7.99">9.99</span><span class="nper">/mo</span></div>
+      <div class="nsave" id="nm-save">&nbsp;</div>
+      <div class="nplan-sub">For professionals who show up to every event and want to maximize every room they walk into.</div>
+      <a href="https://app.getnetworked.com" class="nplan-btn btn-gd">Get Networked</a>
+      <div class="nfgl">Networking</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Unlimited connection requests</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>See who viewed your profile</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Pre-event attendee list</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Unlimited direct messaging</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Priority RSVP (48hr early access)</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Verified member badge on profile</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Full member directory search</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>5 AI-matched intro credits / month</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Reduced ticket fees (8% vs 10%)</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>VIP event access</div>
+      <div class="nfi"><span class="nic nic-n">✗</span>Curated founder matching</div>
+    </div>
+
+    <!-- FOUNDER PASS -->
+    <div class="nplan">
+      <div class="nplan-lbl">Founder Pass</div>
+      <div class="nplan-price"><span class="nsup">$</span><span class="npv" data-mo="24.99" data-yr="19.99">24.99</span><span class="nper">/mo</span></div>
+      <div class="nsave" id="nf-save">&nbsp;</div>
+      <div class="nplan-sub">For founders, investors, and operators who treat every event as a business development opportunity.</div>
+      <a href="https://app.getnetworked.com" class="nplan-btn btn-ol">Get Founder Pass</a>
+      <div class="nfgl">Networking</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Everything in Networked Member</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>VIP event access + reserved seating</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Unlimited AI-matched intro credits</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Curated founder-to-founder matching</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Featured placement in member directory</div>
+      <div class="nfi hi"><span class="nic nic-y">✓</span>Invite to founder-only events</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Reduced ticket fees (6% vs 10%)</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Direct line to GetNetworked team</div>
+      <div class="nfi"><span class="nic nic-y">✓</span>Early access to new platform features</div>
+    </div>
+
+  </div>
+
+  <!-- INTRO CREDITS — CONSUMPTION -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 28px 24px;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Intro Credits — Pay as you go</div>
+        <div style="font-size:18px;font-weight:800;letter-spacing:-0.03em;margin-bottom:6px;">Not ready to subscribe? Buy intros à la carte.</div>
+        <p style="font-size:13px;color:var(--g2);max-width:520px;line-height:1.65;">Each intro credit sends a curated connection request to someone you want to meet — with context about why you want to connect. Think LinkedIn InMail, but for real rooms. Available on any plan, including free.</p>
+      </div>
+      <div style="text-align:right;flex-shrink:0;">
+        <div style="font-size:11px;color:var(--g3);margin-bottom:4px;">Credits never expire</div>
+        <div style="font-size:11px;color:var(--g3);">Stackable with any membership</div>
+      </div>
+    </div>
+    <div class="credits-row">
+      <div class="credit-card">
+        <div class="cc-qty">5 intros</div>
+        <div class="cc-price">$4.99</div>
+        <div class="cc-cpm">$0.99 / intro</div>
+      </div>
+      <div class="credit-card">
+        <div class="cc-qty">15 intros</div>
+        <div class="cc-price">$11.99</div>
+        <div class="cc-cpm">$0.79 / intro</div>
+      </div>
+      <div class="credit-card best">
+        <div class="cc-tag">Best value</div>
+        <div class="cc-qty">40 intros</div>
+        <div class="cc-price">$24.99</div>
+        <div class="cc-cpm">$0.62 / intro</div>
+      </div>
+      <div class="credit-card">
+        <div class="cc-qty">100 intros</div>
+        <div class="cc-price">$49.99</div>
+        <div class="cc-cpm">$0.49 / intro</div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--g3);margin-top:14px;">Intro credits roll over — they never expire. Networked Member includes 5 free credits/mo. Founder Pass includes unlimited.</p>
+  </div>
+</section>
+
+<!-- ══ FEE TABLES ══ -->
+<section class="fees-wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Attendee fee breakdown</div>
+    <h2>Sliding scale. Lower fees as you scale.</h2>
+    <p>Higher ticket prices and higher plans both unlock lower percentage fees. Community plan hosts free events only — no ticket fees apply.</p>
+  </div>
+  <div class="fee-tabs">
+    <button class="ftab on" onclick="setFee('g',this)">Growth</button>
+    <button class="ftab" onclick="setFee('e',this)">Enterprise</button>
+    <button class="ftab" onclick="setFee('all',this)">Compare all</button>
+  </div>
+  <div class="tbl-wrap">
+    <div class="ftw on" id="fee-g"><table class="ft"><thead><tr><th>Ticket price</th><th>Attendee fee</th><th>Example — attendee pays</th><th>Host receives</th></tr></thead><tbody>
+      <tr><td class="b">$0 – $50</td><td class="g">8% + $0.99</td><td>$10 → $11.79</td><td>$10.00</td></tr>
+      <tr><td class="b">$50 – $150</td><td class="g">7% + $0.99</td><td>$100 → $107.99</td><td>$100.00</td></tr>
+      <tr><td class="b">$150 – $300</td><td class="g">6% + $0.99</td><td>$200 → $212.99</td><td>$200.00</td></tr>
+      <tr><td class="b">$300+</td><td class="g">4% + $0.99</td><td>$350 → $364.99</td><td>$350.00</td></tr>
+    </tbody></table></div>
+    <div class="ftw" id="fee-e"><table class="ft"><thead><tr><th>Ticket price</th><th>Attendee fee</th><th>Example — attendee pays</th><th>Host receives</th></tr></thead><tbody>
+      <tr><td class="b">$0 – $50</td><td class="g">6% + $0.99</td><td>$10 → $11.59</td><td>$10.00</td></tr>
+      <tr><td class="b">$50 – $150</td><td class="g">5% + $0.99</td><td>$100 → $105.99</td><td>$100.00</td></tr>
+      <tr><td class="b">$150 – $300</td><td class="g">4% + $0.99</td><td>$200 → $208.99</td><td>$200.00</td></tr>
+      <tr><td class="b">$300+</td><td class="g">2% + $0.99</td><td>$350 → $357.99</td><td>$350.00</td></tr>
+    </tbody></table></div>
+    <div class="ftw" id="fee-all"><table class="ft"><thead><tr><th>Ticket tier</th><th style="color:var(--gold);">Growth</th><th>Enterprise</th><th>Revenue Partner</th></tr></thead><tbody>
+      <tr><td class="b">$0 – $50</td><td class="g">8% + $0.99</td><td>6% + $0.99</td><td class="g">0%</td></tr>
+      <tr><td class="b">$50 – $150</td><td class="g">7% + $0.99</td><td>5% + $0.99</td><td class="g">0%</td></tr>
+      <tr><td class="b">$150 – $300</td><td class="g">6% + $0.99</td><td>4% + $0.99</td><td class="g">0%</td></tr>
+      <tr><td class="b">$300+</td><td class="g">4% + $0.99</td><td>2% + $0.99</td><td class="g">0%</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- ══ CALCULATOR ══ -->
+<section class="calc-wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Fee calculator</div>
+    <h2 style="font-size:30px;">See exactly what you'll pay.</h2>
+  </div>
+  <div class="calc-card">
+    <div class="calc-grid">
+      <div class="cfield"><label>Ticket price ($)</label><input type="number" id="c-price" value="25" min="1" oninput="doCalc()"></div>
+      <div class="cfield"><label>Tickets to sell</label><input type="number" id="c-qty" value="50" min="1" oninput="doCalc()"></div>
+      <div class="cfield"><label>Host plan</label>
+        <select id="c-plan" onchange="doCalc()">
+          <option value="0" selected>Growth ($49/mo)</option>
+          <option value="1">Enterprise ($199/mo)</option>
+        </select>
+      </div>
+      <div class="cfield"><label>Who pays the fee?</label>
+        <select id="c-who" onchange="doCalc()">
+          <option value="attendee">Attendee pays fee (default)</option>
+          <option value="host">Host absorbs fee</option>
+        </select>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="cres"><div class="cres-lbl" id="lbl-att">Attendee pays</div><div class="cres-val" id="r-att">—</div><div class="cres-sub" id="sub-att">per ticket total</div></div>
+      <div class="cres"><div class="cres-lbl" id="lbl-host">Host receives</div><div class="cres-val gld" id="r-host">—</div><div class="cres-sub" id="sub-host">full face value</div></div>
+      <div class="cres"><div class="cres-lbl">Platform fee</div><div class="cres-val" id="r-fee">—</div><div class="cres-sub" id="sub-fee">per ticket</div></div>
+      <div class="cres"><div class="cres-lbl">GN earns (event)</div><div class="cres-val gld" id="r-total">—</div><div class="cres-sub" id="r-sub">—</div></div>
+    </div>
+    <div class="calc-note" id="calc-note"></div>
+  </div>
+</section>
+
+<!-- ══ MORE TESTIMONIALS ══ -->
+<section class="testi2-wrap">
+  <div class="testi-grid">
+    <div class="testi">
+      <p class="testi-quote">GetNetworked has simplified our event registration process and removed much of the friction from managing events. The platform is intuitive, efficient, and has made a noticeable difference for our team.</p>
+      <div class="testi-author">
+        <img src="https://framerusercontent.com/images/JUsl3MtYvRSmACXzM1THdMZwz1A.png" alt="Rob Trotter">
+        <div><div class="testi-name">Rob Trotter</div><div class="testi-role">Founder, Atlanta Social Sphere</div></div>
+      </div>
+    </div>
+    <div class="testi">
+      <p class="testi-quote">The GetNetworked community has been incredibly valuable. Sponsoring events has introduced me to some of the brightest people in tech while providing meaningful visibility for my brand. It truly represents what networking should be.</p>
+      <div class="testi-author">
+        <img src="https://framerusercontent.com/images/MDatoWsIiP1OQIhfLuM1kPT6Uts.png" alt="Diana Macaraeg">
+        <div><div class="testi-name">Diana Macaraeg</div><div class="testi-role">Founder, Diana Macaraeg Photography</div></div>
+      </div>
+    </div>
+    <div class="testi">
+      <p class="testi-quote">By bringing the right people together in the same room, the platform helped spark a connection that led to launching our first value-added SaaS product for industrial warehouse labeling within eight months.</p>
+      <div class="testi-author">
+        <img src="https://framerusercontent.com/images/FNepC1TqtcA94pYeucD4ikG4.png" alt="Keaton Smith">
+        <div><div class="testi-name">Keaton Smith</div><div class="testi-role">Founder, Country Innovation &amp; Supply</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APP DOWNLOAD ══ -->
+<section class="app-wrap">
+  <div class="app-card">
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Available on iOS &amp; Android</div>
+      <h2>Take GetNetworked everywhere.</h2>
+      <p>Create events, check in guests, send campaigns, and manage your community — all from your phone. Download the app and get started in minutes.</p>
+    </div>
+    <div class="app-btns">
+      <a href="https://apps.apple.com/us/app/networked-ai/id6471849642" target="_blank"><img src="https://framerusercontent.com/images/AhECInHfrKR4fwB71XJ4dxrmkQc.png" alt="Download on the App Store"></a>
+      <a href="https://play.google.com/store/apps/details?id=app.networked.ai&hl=en_US" target="_blank"><img src="https://framerusercontent.com/images/CZdaJ80DiRGWrKPXXzOWYnfcqA.png" alt="Get it on Google Play"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq-wrap">
+  <div class="sec-head"><h2>Common questions.</h2></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">What is the GetNetworked public marketplace? <span class="faq-arrow">+</span></div><div class="faq-a">Every event you publish on GetNetworked is automatically listed in our public marketplace — a searchable, location-based directory of professional events open to the GetNetworked community. Attendees browsing the marketplace can discover your event, RSVP, and purchase tickets directly. This gives your events organic reach beyond your own network, on every plan including Community — no extra cost, no boosting required.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Is hosting really free? <span class="faq-arrow">+</span></div><div class="faq-a">Yes. Creating an account and hosting free events costs nothing on the Community plan. You only need a paid plan (Growth or Enterprise) to unlock paid ticketing, custom branding, analytics, and advanced features.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Who pays the ticket fee — me or my attendees? <span class="faq-arrow">+</span></div><div class="faq-a">By default, attendees pay the platform fee on top of your ticket price — you always receive 100% of your face value. A $10 ticket costs the attendee $12.00. You can choose to absorb the fee in your event settings.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">What is the Stripe processing fee? <span class="faq-arrow">+</span></div><div class="faq-a">Stripe charges 2.9% + $0.30 per paid transaction for credit card processing. This is a standard payment processing fee — GetNetworked does not take any cut from the host. You always receive the full face value of your ticket price.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Is there a fee on free events? <span class="faq-arrow">+</span></div><div class="faq-a">No. Free events cost nothing to host or attend. GetNetworked only earns when a paid ticket is sold.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">What's the difference between transactional and campaign messages? <span class="faq-arrow">+</span></div><div class="faq-a">Transactional messages are sent automatically by the platform — RSVP confirmations, event reminders (24hr and 1hr before), ticket receipts, and waitlist notifications. These are free and unlimited on every plan, including Community. Campaign messages are host-initiated — event announcements, marketing blasts, post-event follow-ups, and newsletters. These count against your monthly credit allocation. Host controls to customize or disable transactional messages are coming soon.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">What happens when I exceed my campaign SMS or email limit? <span class="faq-arrow">+</span></div><div class="faq-a">Overage rates apply automatically to campaign messages. SMS: Growth $0.018/SMS · Enterprise $0.012/SMS. Email: Growth $0.0008/email · Enterprise $0.0006/email. Alternatively, pre-purchase bulk add-ons at discounted rates — SMS from $19 (1,000) to $549 (50,000), email from $9 (10,000) to $299 (500,000). All credits roll over 90 days and never expire. Transactional messages are never affected by credit limits.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Can I upgrade or downgrade anytime? <span class="faq-arrow">+</span></div><div class="faq-a">Yes. Upgrades take effect immediately. Downgrades apply at end of billing period. Annual plans lock in the discounted rate for 12 months.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">When do I get paid? <span class="faq-arrow">+</span></div><div class="faq-a">Growth hosts receive payouts on Stripe's standard rolling schedule — typically 2 business days in the US. Enterprise hosts receive priority T+1 payouts. Community hosts run free events only and do not process payments.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">Is there a transaction limit? <span class="faq-arrow">+</span></div><div class="faq-a">Individual ticket transactions are capped at $25,000 per transaction. There is no cap on total event revenue or total sales volume across your account.</div></div>
+</section>
+
+<!-- ══ BOTTOM CTA ══ -->
+<section class="btm-cta">
+  <h2>Ready to build your community?</h2>
+  <p>Start free. Upgrade when you're ready to grow.</p>
+  <div class="cta-row">
+    <a href="https://app.getnetworked.com" class="btn-p">Get Started Free</a>
+    <a href="https://calendly.com/networked" class="btn-s">Book a Demo →</a>
+  </div>
+  <p class="cta-micro">Cancel anytime · No contracts · No surprises</p>
+</section>
+
+<script>
+/* ── FOUNDING HOST COUNTDOWN ── */
+(function(){
+  // Set your offer end date here — 60 days from launch
+  var end = new Date('2026-06-15T23:59:59');
+  function tick(){
+    var now = new Date(), diff = end - now;
+    var el = document.getElementById('founding-countdown');
+    if(!el) return;
+    if(diff <= 0){ el.textContent = 'offer ended'; return; }
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor((diff%86400000)/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var s = Math.floor((diff%60000)/1000);
+    el.textContent = d+'d '+h+'h '+m+'m '+s+'s';
+  }
+  tick(); setInterval(tick, 1000);
+})();
+/* ── BILLING TOGGLE ── */
+function setTerm(t){
+  document.getElementById('btn-mo').classList.toggle('on',t==='mo');
+  document.getElementById('btn-yr').classList.toggle('on',t==='yr');
+  document.querySelectorAll('.pv').forEach(el=>{el.textContent=t==='yr'?el.dataset.yr:el.dataset.mo});
+  var gs=document.getElementById('gn-save'),es=document.getElementById('en-save');
+  if(t==='yr'){
+    gs.textContent='Billed $468/yr — save $120';es.textContent='Billed $1,908/yr — save $480';
+  }else{gs.innerHTML='&nbsp;';es.innerHTML='&nbsp;';}
+}
+/* ── NETWORKING TOGGLE ── */
+function setNet(t){
+  document.getElementById('nt-mo').classList.toggle('on',t==='mo');
+  document.getElementById('nt-yr').classList.toggle('on',t==='yr');
+  document.querySelectorAll('.npv').forEach(el=>{el.textContent=t==='yr'?el.dataset.yr:el.dataset.mo});
+  var nm=document.getElementById('nm-save'),nf=document.getElementById('nf-save');
+  if(t==='yr'){
+    nm.textContent='Billed $95.88/yr — save $24'; nf.textContent='Billed $239.88/yr — save $60';
+  }else{nm.innerHTML='&nbsp;';nf.innerHTML='&nbsp;';}
+}
+/* ── FEE TABS ── */
+function setFee(id,btn){
+  document.querySelectorAll('.ftw').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('fee-'+id).classList.add('on');btn.classList.add('on');
+}
+/* ── CALCULATOR ── */
+var tiers=[
+  [[50,0.08,0.99],[150,0.07,0.99],[300,0.06,0.99],[99999,0.04,0.99]],
+  [[50,0.06,0.99],[150,0.05,0.99],[300,0.04,0.99],[99999,0.02,0.99]]
+];
+function getFee(p,pl){var t=tiers[pl];for(var i=0;i<t.length;i++){if(p<=t[i][0])return{pct:t[i][1],fx:t[i][2]}}return{pct:t[t.length-1][1],fx:t[t.length-1][2]}}
+function fd(n){return'$'+n.toFixed(2)}
+function fk(n){return n>=1000?'$'+(n/1000).toFixed(1)+'K':'$'+Math.round(n)}
+function doCalc(){
+  var p=parseFloat(document.getElementById('c-price').value)||0;
+  var q=parseInt(document.getElementById('c-qty').value)||0;
+  var pl=parseInt(document.getElementById('c-plan').value);
+  var who=document.getElementById('c-who').value;
+  var t=getFee(p,pl);
+  var fee=p*t.pct+t.fx;
+  /* Stripe processes the total charged amount */
+  var pn=['Growth ($49/mo)','Enterprise ($199/mo)'];
+  var note='';
+
+  if(who==='attendee'){
+    /* Attendee pays: face value + platform fee on top */
+    /* Stripe charges on total = price + fee */
+    var totalCharged=p+fee;
+    var stripeCost=totalCharged*0.029+0.30;
+    var gnEarns=fee-stripeCost; /* GN keeps the fee minus what Stripe takes */
+    document.getElementById('r-att').textContent=fd(totalCharged);
+    document.getElementById('r-host').textContent=fd(p);
+    document.getElementById('r-fee').textContent=fd(fee);
+    document.getElementById('r-total').textContent=fk(Math.max(0,gnEarns)*q);
+    document.getElementById('r-sub').textContent=q+' tickets × '+fd(Math.max(0,gnEarns))+' GN net';
+    document.getElementById('lbl-att').textContent='Attendee pays';
+    document.getElementById('lbl-host').textContent='Host receives';
+    document.getElementById('sub-att').textContent='face value + fee';
+    document.getElementById('sub-host').textContent='full face value';
+    document.getElementById('sub-fee').textContent='attendee pays this';
+    note='Attendee-pays (default): On '+pn[pl]+', a $'+p.toFixed(0)+' ticket costs the attendee '+fd(totalCharged)+'. You receive $'+p.toFixed(2)+' in full. GetNetworked collects the '+fd(fee)+' platform fee, pays Stripe '+fd(stripeCost)+', and nets '+fd(Math.max(0,gnEarns))+' per ticket.';
+  } else {
+    /* Host absorbs: attendee pays face value, host covers the fee */
+    /* Stripe processes the face value only */
+    var stripeCostHost=p*0.029+0.30;
+    var gnEarnsHost=fee; /* GN still earns the fee — host is paying it */
+    var gnNetHost=fee-stripeCostHost;
+    var hostNets=p-fee; /* host receives face value minus the fee they absorb */
+    document.getElementById('r-att').textContent=fd(p);
+    document.getElementById('r-host').textContent=fd(Math.max(0,hostNets));
+    document.getElementById('r-fee').textContent=fd(fee);
+    document.getElementById('r-total').textContent=fk(Math.max(0,gnNetHost)*q);
+    document.getElementById('r-sub').textContent=q+' tickets × '+fd(Math.max(0,gnNetHost))+' GN net';
+    document.getElementById('lbl-att').textContent='Attendee pays';
+    document.getElementById('lbl-host').textContent='Host nets';
+    document.getElementById('sub-att').textContent='face value only';
+    document.getElementById('sub-host').textContent='after absorbing fee';
+    document.getElementById('sub-fee').textContent='host absorbs this';
+    note='Host-absorbs mode: Attendees pay only $'+p.toFixed(2)+' — no visible fee. You absorb the '+fd(fee)+' platform fee and net '+fd(Math.max(0,hostNets))+' per ticket. GetNetworked still earns the '+fd(fee)+' fee minus Stripe\'s '+fd(stripeCostHost)+', netting '+fd(Math.max(0,gnNetHost))+' per ticket. Across '+q+' tickets you absorb '+fk(fee*q)+' in fees total.';
+  }
+  document.getElementById('calc-note').textContent=note;
+}
+doCalc();
+</script>
+</body>
+</html>
